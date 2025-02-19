@@ -1,7 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
@@ -32,6 +38,7 @@ export default function Register() {
       });
       router.push("/login");
     } catch (error) {
+      console.log(error);
       toast({
         title: "Error",
         description: "Invalid data or user already exists",
@@ -108,12 +115,16 @@ export default function Register() {
                 required
               />
             </div>
-            <Button type="submit" className="w-full">Register</Button>
+            <Button type="submit" className="w-full">
+              Register
+            </Button>
           </form>
           <div className="mt-4 text-center">
             <p className="text-sm text-gray-600">Already have an account?</p>
             <Link href="/login">
-              <Button variant="link" className="mt-1">Login here</Button>
+              <Button variant="link" className="mt-1">
+                Login here
+              </Button>
             </Link>
           </div>
         </CardContent>
